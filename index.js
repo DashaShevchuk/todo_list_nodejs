@@ -4,6 +4,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 //Викликаємо express
 var app = express();
+//Надаємо доступ до папки public
+app.use(express.static("public"));
 //Вмикаємо body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
 //Налаштовуємо обробник шаблонів
@@ -49,3 +51,4 @@ app.get("/", function (req, res) {
 app.listen(3000, function () {
     console.log("Сервер працює на порту 3000!");
 });
+
